@@ -31,39 +31,36 @@ function App() {
 
   return (
     <>
-      <nav className="navbar">
-        <div className="nav-content">
-          <div className="nav-left">
-            <div className="brand-info">
-              <span className="brand-title">Elective 3</span>
-              <span className="brand-subtitle">FINALS COMPILATION</span>
-            </div>
-          </div>
-          <div className="nav-right">
-            <span className="nav-text active">Documents</span>
-            <span className="nav-text">Finals 2025</span>
-          </div>
-        </div>
-      </nav>
-      
       <div className="app-container">
         <header className="header">
-          <div className="header-content">
-            <div className="student-info">
+          <div className="header-hero">
+            <div className="header-background">
+              <div className="tech-icon-grid">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" alt="Spring" className="tech-icon-bg" />
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker" className="tech-icon-bg" />
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" className="tech-icon-bg" />
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" className="tech-icon-bg" />
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" className="tech-icon-bg" />
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="MySQL" className="tech-icon-bg" />
+              </div>
+            </div>
+            <div className="header-content">
+              <div className="header-badge">
+                <span className="badge-icon"></span>
+                <span>FINALS COMPILATION 2025</span>
+              </div>
               <h1 className="student-name">David Christian C. Olimberio</h1>
               <div className="course-info">
                 <span className="course-code">IV - ACSAD</span>
                 <span className="divider">•</span>
                 <span className="course-title">ELEC 3 Compilation</span>
               </div>
+              <p className="intro-text">
+                This compilation showcases hands-on projects and technical documentation exploring modern cloud computing technologies. 
+                From building RESTful APIs with Spring Boot to orchestrating containers with Kubernetes, each assignment demonstrates 
+                practical implementations of industry-standard DevOps tools and cloud infrastructure solutions.
+              </p>
             </div>
-          </div>
-          <div className="intro-section">
-            <p className="intro-text">
-              This compilation showcases hands-on projects and technical documentation exploring modern cloud computing technologies. 
-              From building RESTful APIs with Spring Boot to orchestrating containers with Kubernetes, each assignment demonstrates 
-              practical implementations of industry-standard DevOps tools and cloud infrastructure solutions.
-            </p>
           </div>
         </header>
 
