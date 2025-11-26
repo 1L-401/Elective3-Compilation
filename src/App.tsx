@@ -21,8 +21,11 @@ function App() {
     { name: 'Docker Image Lab Activity', path: '/files/LAB DOCKER IMAGE.pdf', type: 'Hands-on lab for building, managing, and deploying Docker container images with practical exercises.', iconUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg', tags: ['Docker', 'Images', 'Lab'] },
   ]
 
-  const handleViewFile = (file: FileItem) => {
+  const [selectedFileIndex, setSelectedFileIndex] = useState<number | null>(null)
+
+  const handleViewFile = (file: FileItem, index: number) => {
     setSelectedFile(file)
+    setSelectedFileIndex(index)
   }
 
   const handleCloseModal = () => {
@@ -66,7 +69,7 @@ function App() {
 
         <div className="files-grid">
           {files.map((file, index) => (
-            <div key={index} className="file-card" onClick={() => handleViewFile(file)}>
+            <div key={index} className="file-card" onClick={() => handleViewFile(file, index)}>
               <div className="card-header">
                 <img src={file.iconUrl} alt={file.name} className="file-icon" />
                 <span className="assignment-badge">ASSIGNMENT #{index + 1}</span>
@@ -81,7 +84,7 @@ function App() {
                 ))}
               </div>
               <button className="view-btn">
-                <span className="eye-icon">👁</span> View Document
+                View Document
               </button>
             </div>
           ))}
@@ -92,8 +95,16 @@ function App() {
         <div className="modal-overlay" onClick={handleCloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
-              <h2>{selectedFile.name}</h2>
-              <button className="close-btn" onClick={handleCloseModal}>✕</button>
+              <h2>{selectedFile.name} - Assignment #{selectedFileIndex !== null ? selectedFileIndex + 1 : ''}</h2>
+              <div className="modal-actions">
+                <a href={selectedFile.path} download className="action-btn" title="Download">
+                  <span>⬇</span>
+                </a>
+                <a href={selectedFile.path} target="_blank" rel="noopener noreferrer" className="action-btn" title="Open in new tab">
+                  <span>↗</span>
+                </a>
+                <button className="close-btn" onClick={handleCloseModal} title="Close">✕</button>
+              </div>
             </div>
             <div className="pdf-viewer">
               <iframe
